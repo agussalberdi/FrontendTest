@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Test | Marfeel</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -11,31 +12,40 @@
 <body>
     <section id="home">
         <div class="wrapper">
-            <div id="search">
-                <input type="search" name="user" placeholder="Search username...">
+            <form id="search" method="POST">
+                <input type="text" name="username" id="username" placeholder="Search username...">
                 <input type="submit" value="Search">
-                
-            </div>
+                <span class="error">Error. The user does not exist.</span>
+            </form>
 
             <div id="profile">
-                <div>
-                    <input type="search" name="user" placeholder="Search username...">
-                    <input type="submit" value="Search">
-                </div>
                 <div class="container">
                     <i class="fab fa-github-square"></i>
                     <div class="info-text">
-                        <span>@username</span>
-                        <h3>Full name</h3>
-                        <p>this is the bio</p>
+                        <span class="profile-username"></span>
+                        <h3 class="profile-name"></h3>
+                        <p class="profile-bio"></p>
                     </div>
+                </div>
+
+                <h4 class="title">Repositories</h4>
+                <hr>
+                <div class="repositories">
+                    <div class="item">
+                        <span class="repo-name"></span>
+                        <div class="data">
+                            <i class="fas fa-star"></i>
+                            <span class="stars"></span>
+                            <i class="fas fa-code-branch"></i>
+                            <span class="forks"></span>
+                        </div>
+                    </div>
+                    <hr>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
