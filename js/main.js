@@ -9,11 +9,8 @@ const repoName = document.querySelector(".repo-name");
 const repoStars = document.querySelector(".stars");
 const repoForks = document.querySelector(".forks");
 
-const client_id = "658272d3dab761dfc7e5";
-const client_secret = "23a96c25a7556e53efde2434bc3b7e714b80cd40";
-
 const fetchUsers = async (user) =>{
-    const user_call = await fetch(`https://api.github.com/users/${user}?client_id=${client_id}&client_secret=${client_secret}`);
+    const user_call = await fetch(`https://api.github.com/users/${user}`);
     const data = await user_call.json();
     return { data }
 }
