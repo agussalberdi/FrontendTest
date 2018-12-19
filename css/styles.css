@@ -67,6 +67,7 @@ input[type="submit"]:hover{
     margin-top: 15px;
     border-radius: 5px;
 }
+
 #profile{
     display: none;
     background: #fff;
@@ -87,8 +88,12 @@ input[type="submit"]:hover{
 .container i{
     font-size: 90px;
     margin-right: 10px;
+    width: 80px;
 }
 
+.info-text{
+    width: calc(100% - 90px);
+}
 .info-text span{
     display: block;
     font-size: 16px;
@@ -96,7 +101,11 @@ input[type="submit"]:hover{
 }
 
 .info-text h3{
-    font-size: 30px;
+    font-size: 27px;
+}
+
+.info-text p{
+    font-size: 15px;
 }
 
 .info-text span,h3,p{
@@ -109,6 +118,7 @@ input[type="submit"]:hover{
     font-size: 20px;
     color: #333333;
     text-align: left;
+    margin-top: 15px;
 }
 
 #profile > hr{
@@ -121,6 +131,23 @@ input[type="submit"]:hover{
     justify-content: space-between;
 }
 
+.repo-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.data{
+    width: 100px;
+    text-align: right;
+}
+
+@media screen and (max-width:1024px){
+    .wrapper{
+        width: 50%;
+    }
+}
+
 @media screen and (max-width: 800px){
     .wrapper{
         width: 70%;
@@ -130,6 +157,9 @@ input[type="submit"]:hover{
 @media screen and (max-width: 450px){
     .wrapper{
         width: 90%;
+    }
+    .info-text{
+        width: 100%;
     }
 }
 

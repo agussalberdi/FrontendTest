@@ -1,5 +1,5 @@
 var formulario = document.querySelector("#search");
-var inputValue = document.querySelector("#username");
+var input = document.querySelector("#username");
 var profile = document.querySelector("#profile");
 
 const name = document.querySelector(".profile-name");
@@ -14,7 +14,6 @@ const client_secret = "23a96c25a7556e53efde2434bc3b7e714b80cd40";
 
 const fetchUsers = async (user) =>{
     const user_call = await fetch(`https://api.github.com/users/${user}?client_id=${client_id}&client_secret=${client_secret}`);
-    
     const data = await user_call.json();
     return { data }
 }
@@ -26,7 +25,7 @@ const fetchRepositories = async (user) =>{
 }
 
 const showData = () =>{
-    fetchUsers(inputValue.value).then((res) =>{
+    fetchUsers(input.value).then((res) =>{
         console.log(res);
 
         if (res.data.message != "Not Found"){
@@ -49,7 +48,7 @@ const showData = () =>{
             }
 
     });
-    fetchRepositories(inputValue.value).then((res) =>{
+    fetchRepositories(input.value).then((res) =>{
         console.log(res);
 
         const repositories = document.querySelector(".repositories");
@@ -77,11 +76,10 @@ const showData = () =>{
         })
         repositories.innerHTML = html;
         console.log(rep);
-        
     });
 }
 
 formulario.addEventListener('submit', (evt) =>{
     evt.preventDefault();
     showData();
-})
+});
